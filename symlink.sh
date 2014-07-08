@@ -8,6 +8,6 @@ REPO=$(pwd)
 
 cd $REPO
 
-for file in $(find . -name ".*" -not -name ".git" -not -name "."); do
+for file in $(find . -name ".*" -not -name ".git" -not -name "." -not -name ".gitignore"); do
   ln -s $REPO/$file ~/$file
 done
