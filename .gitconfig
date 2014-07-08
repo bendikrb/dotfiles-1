@@ -1,0 +1,15 @@
+[user]
+	name = pyro2927
+	email = joseph@pintozzi.com
+[core]
+	pager = less -FRSX
+	excludesfile = /Users/joe/.gitignore_global
+	editor = /usr/bin/vim
+	whitespace = cr-at-eol
+[color]
+	ui = auto
+	pager = true
+	ui = true
+
+[hub]
+protocol = https
