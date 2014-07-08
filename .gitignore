@@ -1,0 +1,6 @@
+# Ignored for sensitive data, such as tokens
+.config/hub
+
+# Ignored because automatically generated
+fishd.*
+fish_history
