@@ -1,17 +1,17 @@
 function festive_prompt
   # figure out what icon to use
   switch (date "+%m")
-  case '1'
+  case '0106'
     printf '🎉  '
-  case '7'
-    printf '🇺🇸  '
-  case '10'
+  case '0704'
+    printf '🎆  '
+  case '103*'
     printf '🎃  '
-  case '11'
+  case '112*'
     printf '🍗  ' 
-  case '12'
+  case '122*'
     printf '🎅  '
   case '*'
-    printf 'ॐ '
+    printf 'ॐ  '
   end
 end
