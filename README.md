@@ -7,3 +7,7 @@ Tired of using Dropbox, going to move all my dotfiles over to here.
     git clone git@github.com:pyro2927/dotfiles.git
     cd dotfiles
     sh ./symlink.sh
+
+## Screenshot
+
+![](./terminal.png)
