@@ -79,15 +79,14 @@ function hg_prompt
   printf (set_color normal)
 end
 
-function fish_title
-  if test -z (git branch -quiet 2>| awk '/fatal:/ {print "no git"}')
-    printf '%s | %s' (prompt_pwd) (__fish_git_current_branch)
-  else
-    printf '%s' (prompt_pwd)
+function exit_code_prompt
+  if not [ $status = '0' ]
+    printf '%s(ノಠ益ಠ)ノ彡┻━┻%s' (set_color red) (set_color normal)
   end
 end
 
 function fish_prompt
+  exit_code_prompt
   z --add "$PWD"
   echo
 
