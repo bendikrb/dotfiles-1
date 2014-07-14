@@ -8,3 +8,5 @@ then
 fi
 
 brew install rbenv ruby-build fish tmux
+
+chsh -s $(which fish) $(whoami)
