@@ -15,4 +15,4 @@ The included install script sets up homebrew, installs my favorite/main programs
 
 ## Screenshot
 
-![](./terminal.png)
+![](./terminal.png#)
