@@ -90,7 +90,7 @@ function fish_prompt
   z --add "$PWD"
   echo
 
-  printf '%s%s%s' (set_color cyan) (whoami) (set_color normal)
+  printf '╭─%s%s%s' (set_color cyan) (whoami) (set_color normal)
   printf '@'
   printf '%s%s%s' (set_color cyan) (hostname|cut -d . -f 1) (set_color normal)
 
@@ -101,7 +101,7 @@ function fish_prompt
   git_prompt
   hg_prompt
 
-  printf '%s\n'
+  printf '%s\n╰─'
 
   festive_prompt
   printf (set_color normal)
