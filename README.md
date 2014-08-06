@@ -10,7 +10,7 @@ Tired of using Dropbox, going to move all my dotfiles over to here.
 
 ### Manual
 
-    git clone git@github.com:pyro2927/dotfiles.git
+    git clone https://github.com/pyro2927/dotfiles.git
     cd dotfiles
     sh ./install.sh
     sh ./symlink.sh
