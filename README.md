@@ -6,7 +6,7 @@ Tired of using Dropbox, going to move all my dotfiles over to here.
 
 ### Automatic
 
-   curl -sSL https://raw.githubusercontent.com/pyro2927/dotfiles/master/auto_install.sh | bash
+    curl -sSL https://raw.githubusercontent.com/pyro2927/dotfiles/master/auto_install.sh | bash
 
 ### Manual
 
