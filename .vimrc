@@ -7,6 +7,7 @@ call vundle#rc()
 
 syntax on
 set cindent
+set rnu
 set autoindent
 set smartindent
 set shiftwidth=2
@@ -43,6 +44,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'edkolev/tmuxline.vim'
 " fugitive, git stuff
 Bundle 'airblade/vim-gitgutter'
+" Indendation lines
+" Bundle 'Yggdroot/indentLine'
 
 
 " solarized settings
@@ -86,3 +89,10 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 nnoremap Q <Nop>
 nnoremap <F5> :GundoToggle<CR>
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()

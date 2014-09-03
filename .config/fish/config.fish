@@ -146,7 +146,7 @@ alias vundle 'vim +BundleInstall +qall'
 alias t 'todo.sh'
 
 if not contains 'T' $TMUX
-# eval 'tmux ls | grep -v attached; and tmux at; or tmux'
+  eval 'tmux ls | grep -v attached; and tmux at; or tmux'
 end
 
 eval 'ssh-add ~/.ssh/id_rsa'
