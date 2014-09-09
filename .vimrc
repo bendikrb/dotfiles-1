@@ -28,25 +28,24 @@ Bundle 'Lokaltog/vim-easymotion'
 " git stuff
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
+Bundle 'airblade/vim-gitgutter'
+" Unite
+Bundle 'Shougo/unite.vim'
+Bundle 'kmnk/vim-unite-giti'
 " kickass powerline
 Bundle 'bling/vim-airline'
-" syntax highlighting for slim
+" syntax highlighting
 Bundle 'slim-template/vim-slim'
-" json highlighting
 Bundle 'elzr/vim-json'
+Bundle 'scrooloose/syntastic'
+Bundle 'vim-ruby/vim-ruby'
 " auto close tags
 Bundle 'Raimondi/delimitMate'
+" colors
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'vim-ruby/vim-ruby'
-" syntax help
-Bundle 'scrooloose/syntastic'
-" colorize tmux to match
 Bundle 'edkolev/tmuxline.vim'
-" fugitive, git stuff
-Bundle 'airblade/vim-gitgutter'
-" Indendation lines
-" Bundle 'Yggdroot/indentLine'
 
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 " solarized settings
 set background=dark
@@ -89,6 +88,7 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 nnoremap Q <Nop>
 nnoremap <F5> :GundoToggle<CR>
+noremap <C-P>  :Unite -start-insert file_rec<CR>
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
