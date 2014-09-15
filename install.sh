@@ -22,3 +22,10 @@ elif [[ "$unamestr" == 'Linux' ]]; then
     git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
   fi
 fi
+
+#setup vim/vundle
+$DIRECTORY='~/.vim/bundle/vundle'
+if [ ! -d $DIRECTORY ]; then
+  git clone https://github.com/gmarik/Vundle.vim.git $DIRECTORY
+  vim +PluginInstall +qall
+fi
