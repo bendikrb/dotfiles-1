@@ -9,11 +9,11 @@ if [[ "$unamestr" == 'Darwin' ]]; then
   then
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   fi
-  brew install rbenv ruby-build fish tmux
+  brew install rbenv ruby-build fish tmux mercurial
   chsh -s $(which fish) $(whoami)
 elif [[ "$unamestr" == 'Linux' ]]; then
   sudo apt-get update
-  sudo apt-get install -y tmux fish git
+  sudo apt-get install -y tmux fish git mercurial
   if test ! $(which rbenv)
   then
     git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
@@ -23,9 +23,15 @@ elif [[ "$unamestr" == 'Linux' ]]; then
   fi
 fi
 
-#setup vim/vundle
+# setup vim/vundle
 $DIRECTORY='~/.vim/bundle/vundle'
 if [ ! -d $DIRECTORY ]; then
   git clone https://github.com/gmarik/Vundle.vim.git $DIRECTORY
   vim +PluginInstall +qall
 fi
+
+# install mercurial plugins
+mkdir -p ~/src
+cd ~/src
+hg clone http://bitbucket.org/sjl/hg-prompt/
+git clone https://github.com/schacon/hg-git.git
