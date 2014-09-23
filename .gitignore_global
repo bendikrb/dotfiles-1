@@ -4,6 +4,9 @@
 .divshot-cache
 divshot.json
 
+# Ctags
+tags
+
 # Xcode
 build/
 *.pbxuser

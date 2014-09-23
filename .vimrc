@@ -20,30 +20,34 @@ set number
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-" My Bundles here:
+" My Plugins here:
 "
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 " git stuff
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'airblade/vim-gitgutter'
 " Unite
-Bundle 'Shougo/unite.vim'
-Bundle 'kmnk/vim-unite-giti'
+Plugin 'Shougo/unite.vim'
+Plugin 'kmnk/vim-unite-giti'
 " kickass powerline
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 " syntax highlighting
-Bundle 'slim-template/vim-slim'
-Bundle 'elzr/vim-json'
-Bundle 'scrooloose/syntastic'
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'slim-template/vim-slim'
+Plugin 'elzr/vim-json'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-ruby/vim-ruby'
 " auto close tags
-Bundle 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 " colors
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'edkolev/tmuxline.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'edkolev/tmuxline.vim'
+" Highlight long lines
+Plugin 'whatyouhide/vim-lengthmatters'
+" Ctags
+Plugin 'majutsushi/tagbar'
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
@@ -88,6 +92,7 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 nnoremap Q <Nop>
 nnoremap <F5> :GundoToggle<CR>
+nnoremap <F8> :TagbarToggle<CR>
 noremap <C-P>  :Unite -start-insert file_rec<CR>
 
 highlight ExtraWhitespace ctermbg=red guibg=red
