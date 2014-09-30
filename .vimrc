@@ -6,48 +6,42 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 syntax on
-set cindent
-set rnu
 set autoindent
-set smartindent
-set shiftwidth=2
+set backspace=2
+set binary
+set cindent
 set expandtab
+set noeol
+set number
+set rnu
+set shiftwidth=2
+set smartindent
+set softtabstop=2
 set tabstop=2
 
 map <Esc>[B <Down>
 
-set number
 
 " let Vundle manage Vundle
 " required!
 Plugin 'gmarik/vundle'
 
 " My Plugins here:
-"
-Plugin 'Lokaltog/vim-easymotion'
-" git stuff
+Plugin 'Raimondi/delimitMate'
+Plugin 'Shougo/unite.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'elzr/vim-json'
+Plugin 'kmnk/vim-unite-giti'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/syntastic'
+Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
-Plugin 'airblade/vim-gitgutter'
-" Unite
-Plugin 'Shougo/unite.vim'
-Plugin 'kmnk/vim-unite-giti'
-" kickass powerline
-Plugin 'bling/vim-airline'
-" syntax highlighting
-Plugin 'slim-template/vim-slim'
-Plugin 'elzr/vim-json'
-Plugin 'scrooloose/syntastic'
 Plugin 'vim-ruby/vim-ruby'
-" auto close tags
-Plugin 'Raimondi/delimitMate'
-" colors
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'edkolev/tmuxline.vim'
-" Highlight long lines
 Plugin 'whatyouhide/vim-lengthmatters'
-" Ctags
-Plugin 'majutsushi/tagbar'
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
@@ -73,9 +67,6 @@ filetype plugin indent on
 
 " highlight md files correctly
 au BufRead,BufNewFile *.md set filetype=markdown
-
-" backspace correctly
-set backspace=2
 
 " Customize git gutter colors
 " let g:gitgutter_highlight_lines = 1
