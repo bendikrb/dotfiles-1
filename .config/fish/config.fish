@@ -21,6 +21,20 @@ rbenv rehash >/dev/null ^&1
 
 set fish_git_dirty_color red
 
+function iconify
+  convert $argv -resize 60x60 iphone@1x.png
+  convert $argv -resize 120x120 iphone@2x.png
+  convert $argv -resize 180x180 iphone@3x.png
+  convert $argv -resize 58x58 iphone_settings@2x.png
+  convert $argv -resize 80x80 iphone_spotlight@2x.png
+  convert $argv -resize 29x29 ipad_settings@1x.png
+  convert $argv -resize 58x58 ipad_settings@2x.png
+  convert $argv -resize 40x40 ipad_spotlight@1x.png
+  convert $argv -resize 80x80 ipad_spotlight@2x.png
+  convert $argv -resize 76x76 ipad@1x.png
+  convert $argv -resize 152x152 ipad@2x.png
+end
+
 function parse_git_dirty
   git diff --quiet HEAD ^&-
   if test $status = 1
