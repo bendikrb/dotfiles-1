@@ -5,6 +5,8 @@ function festive_prompt
     printf '🎉  '
   case '0704'
     printf '🎆  '
+  case '103*'
+    printf '👻  '
   case '10**'
     printf '🎃  '
   case '112*'
