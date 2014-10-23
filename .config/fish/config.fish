@@ -154,10 +154,13 @@ alias vp 'vagrant provision'
 
 # my aliases
 alias cleardupes '/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-alias flushdns 'dscacheutil -flushcache'
+alias flushdns 'sudo discoveryutil udnsflushcaches'
 alias vundle 'vim +BundleInstall +qall'
 # Todo.sh
 alias t 'todo.sh'
+
+# I may have a problem....
+alias amaz 'livestreamer twitch.tv/amazhs best'
 
 if not contains 'T' $TMUX
   eval 'tmux ls | grep -v attached; and tmux at; or tmux'
