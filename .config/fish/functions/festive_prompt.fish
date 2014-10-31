@@ -1,6 +1,6 @@
 function festive_prompt
   # figure out what icon to use
-  switch (date "+%m")
+  switch (date "+%m%d")
   case '0106'
     printf '🎉  '
   case '0704'
