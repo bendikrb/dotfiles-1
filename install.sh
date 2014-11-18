@@ -13,7 +13,7 @@ if [[ "$unamestr" == 'Darwin' ]]; then
   brew install rbenv ruby-build fish tmux mercurial
   # cask
   brew install caskroom/cask/brew-cask
-  brew cask install google-chrome dropbox iterm2 istat-menus razer-synapse karabiner viscosity alfred
+  brew cask install google-chrome dropbox iterm2 istat-menus razer-synapse karabiner viscosity alfred bartender
   # default to fish shell
   chsh -s $(which fish) $(whoami)
 elif [[ "$unamestr" == 'Linux' ]]; then
