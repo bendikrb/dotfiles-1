@@ -9,7 +9,12 @@ if [[ "$unamestr" == 'Darwin' ]]; then
   then
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
   fi
+  # install a few terminal basics
   brew install rbenv ruby-build fish tmux mercurial
+  # cask
+  brew install caskroom/cask/brew-cask
+  brew cask install google-chrome dropbox iterm2 istat-menus razer-synapse karabiner viscosity alfred
+  # default to fish shell
   chsh -s $(which fish) $(whoami)
 elif [[ "$unamestr" == 'Linux' ]]; then
   sudo apt-get update
