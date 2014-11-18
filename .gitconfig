@@ -13,3 +13,5 @@
 
 [hub]
 protocol = https
+[github]
+	user = pyro2927
