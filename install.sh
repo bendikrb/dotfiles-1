@@ -29,9 +29,9 @@ elif [[ "$unamestr" == 'Linux' ]]; then
 fi
 
 # setup vim/vundle
-$DIRECTORY='~/.vim/bundle/vundle'
-if [ ! -d $DIRECTORY ]; then
-  git clone https://github.com/gmarik/Vundle.vim.git $DIRECTORY
+if [ ! -d '~/.vim/bundle/vundle' ]; then
+  mkdir -p '~/.vim/bundle'
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
   vim +PluginInstall +qall
 fi
 

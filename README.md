@@ -22,3 +22,13 @@ The included install script sets up homebrew, installs my favorite/main programs
 ## Screenshot
 
 ![](./terminal2.png)
+
+## Notes
+
+### Fonts
+
+iTerm2 looks best with the solarizad dark theme and `14pt Meslo LG M DZ Regular for Powerline` font.
+
+    wget https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors
+    brew tap caskroom/fonts
+    brew cask install font-meslo-lg-for-powerline
