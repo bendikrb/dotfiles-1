@@ -4,7 +4,7 @@
 # This script creates symlinks from the home directory to all dotfiles in ~/dotfiles
 ############################
 
-REPO=$(pwd)
+REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 cd $REPO
 
