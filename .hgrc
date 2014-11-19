@@ -1,0 +1,8 @@
+[ui]
+editor = vim
+username = Joseph Pintozzi <joseph@pintozzi.com>
+ignore = ~/.hgignore
+[extensions]
+prompt = ~/src/hg-prompt/prompt.py
+hgext.bookmarks =
+hggit = ~/src/hg-git/hggit
