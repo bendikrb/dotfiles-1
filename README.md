@@ -4,6 +4,8 @@ Tired of using Dropbox, going to move all my dotfiles over to here.
 
 ## Setup
 
+On OS X, you'll need `git` and the OS X command line tools installed (packaged with Xcode).
+
 ### Automatic
 
     curl -sSL https://raw.githubusercontent.com/pyro2927/dotfiles/master/auto_install.sh | bash
@@ -17,11 +19,34 @@ Tired of using Dropbox, going to move all my dotfiles over to here.
 
 ### Install Script
 
-The included install script sets up homebrew, installs my favorite/main programs, and then sets `fish` as the default shell.
+The included install script sets installs my favorite/main programs, and then sets `fish` as the default shell.
 
 ## Screenshot
 
 ![](./terminal2.png)
+
+## What's Installed?
+
+The script is meant to work with both Ubuntu and OS X machines, though is more geared towards OS X.
+
+### OS X
+
+* [Homebrew](http://brew.sh/)
+  * [rbenv](https://github.com/sstephenson/rbenv) w/ [ruby-build](https://github.com/sstephenson/ruby-build) plugin
+  * [fish](http://fishshell.com/)
+  * [tmux](http://tmux.sourceforge.net/)
+  * [mercurial](http://mercurial.selenic.com/)
+  * [Cask](http://caskroom.io/)
+    * [Chrome](http://www.google.com/chrome/)
+    * [iTerm2](http://iterm2.com/)
+    * [iStat Menus](http://bjango.com/mac/istatmenus/)
+    * [Razer Synapse](http://www.razerzone.com/synapse/)
+    * [Karabiner](https://github.com/tekezo/Karabiner)
+    * [Viscosity](https://www.sparklabs.com/viscosity/)
+    * [Alfred](http://www.alfredapp.com/)
+    * [Bartender](http://www.macbartender.com/)
+    * [Steam](http://store.steampowered.com/)
+    * [Spotify](https://www.spotify.com/)
 
 ## Notes
 
