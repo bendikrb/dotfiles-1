@@ -21,6 +21,7 @@ rbenv rehash >/dev/null ^&1
 
 set fish_git_dirty_color red
 
+# generate iOS sized icons from a single image
 function iconify
   convert $argv -resize 60x60 iphone@1x.png
   convert $argv -resize 120x120 iphone@2x.png
@@ -33,6 +34,17 @@ function iconify
   convert $argv -resize 80x80 ipad_spotlight@2x.png
   convert $argv -resize 76x76 ipad@1x.png
   convert $argv -resize 152x152 ipad@2x.png
+end
+
+# force an IP address to route through the local VPN connection
+function forcevpn
+  sudo route add -interface ppp0 -host $argv
+end
+
+# checkout a git branch and tag it, useful for archiving
+function tagstore
+  git checkout $argv
+  git tag -a $argv -m "Tagging $argv"
 end
 
 function parse_git_dirty
