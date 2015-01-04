@@ -32,12 +32,14 @@ Plugin 'Shougo/unite.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'elzr/vim-json'
 Plugin 'kmnk/vim-unite-giti'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-fugitive'
@@ -84,9 +86,10 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
-nnoremap Q <Nop>
-nnoremap <F5> :GundoToggle<CR>
-nnoremap <F8> :TagbarToggle<CR>
+noremap   <C-n> :NERDTreeToggle<CR>
+nnoremap  Q <Nop>
+nnoremap  <F5> :GundoToggle<CR>
+nnoremap  <F8> :TagbarToggle<CR>
 noremap <C-P>  :Unite -start-insert file_rec<CR>
 
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -95,3 +98,5 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
