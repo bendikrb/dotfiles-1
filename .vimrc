@@ -1,11 +1,9 @@
 " setup Vundle
 set shell=/bin/bash
 set nocompatible
-filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-syntax on
 set autoindent
 set backspace=2
 set binary
@@ -32,9 +30,11 @@ Plugin 'Shougo/unite.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'elzr/vim-json'
+Plugin 'jaxbot/semantic-highlight.vim'
 Plugin 'kmnk/vim-unite-giti'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/gist-vim'
@@ -47,6 +47,13 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'whatyouhide/vim-lengthmatters'
+" snippits and highlighting
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
+syntax enable
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
@@ -100,3 +107,6 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" toggle semantic higlighting
+nnoremap <C-s> :SemanticHighlightToggle<cr>
