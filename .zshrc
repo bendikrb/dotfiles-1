@@ -27,12 +27,6 @@ function +vi-git-untracked(){
     fi
 }
 
-precmd() {
-  psvar=()
-  vcs_info
-  [[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
-}
-
 source "$HOME/.zsh/aliases.zsh"
 source "$HOME/.zsh/completion.zsh"
 source "$HOME/.zsh/fasd.zsh"
