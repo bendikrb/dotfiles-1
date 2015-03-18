@@ -26,6 +26,9 @@ function +vi-git-untracked(){
         hook_com[unstaged]+='😡 '
     fi
 }
+precmd() {
+  vcs_info
+}
 
 source "$HOME/.zsh/aliases.zsh"
 source "$HOME/.zsh/completion.zsh"
