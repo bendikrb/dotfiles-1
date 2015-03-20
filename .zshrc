@@ -41,3 +41,13 @@ PROMPT='$fg[red]%(?..(ノಠ益ಠ%)ノ彡┻━┻
 ╰─ॐ  '
 
 fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions ~/.zsh $fpath)
+
+# rbenv work
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# ssh-agent forwarding
+[ -f ~/.ssh/id_rsa ] && ssh-add ~/.ssh/id_rsa 2> /dev/null
+
+# added by travis gem
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
