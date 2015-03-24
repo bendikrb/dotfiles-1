@@ -19,3 +19,5 @@ alias srv='python -m SimpleHTTPServer 8888'
 alias cleardupes='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
 alias flushdns='sudo discoveryutil udnsflushcaches'
 alias vundle='vim +BundleInstall +qall'
+
+alias pretty_gource='gource --hide mouse,bloom,dirnames,date,filenames,usernames --user-image-dir .git/avatar/ --auto-skip-seconds 1'
