@@ -10,15 +10,15 @@ if [[ "$unamestr" == 'Darwin' ]]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
   # install a few terminal basics
-  brew install rbenv ruby-build fish tmux mercurial
+  brew install rbenv ruby-build zsh tmux mercurial
   # cask
   brew install caskroom/cask/brew-cask
-  brew cask install google-chrome dropbox iterm2 istat-menus razer-synapse karabiner viscosity alfred bartender steam spotify
+  brew cask install google-chrome dropbox iterm2 istat-menus karabiner viscosity alfred bartender steam spotify
   # default to fish shell
-  chsh -s $(which fish) $(whoami)
+  chsh -s $(which zsh) $(whoami)
 elif [[ "$unamestr" == 'Linux' ]]; then
   sudo apt-get update
-  sudo apt-get install -y tmux fish git mercurial
+  sudo apt-get install -y tmux zsh git mercurial
   if test ! $(which rbenv)
   then
     git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
