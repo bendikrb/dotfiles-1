@@ -46,6 +46,10 @@ fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions ~/.z
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# history
+export HISTFILE="$HOME/.zsh_history"
+export SAVEHIST=500
+
 # ssh-agent forwarding
 [ -f ~/.ssh/id_rsa ] && ssh-add ~/.ssh/id_rsa 2> /dev/null
 

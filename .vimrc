@@ -4,7 +4,12 @@ set nocompatible
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" let Vundle manage Vundle
+Plugin 'gmarik/vundle'
+
 set autoindent
+set autoread
+set autowrite
 set backspace=2
 set binary
 set cindent
@@ -15,48 +20,49 @@ set rnu
 set shiftwidth=2
 set smartindent
 set softtabstop=2
+set spell
+set spelllang=en_us
 set tabstop=2
 
 map <Esc>[B <Down>
 
-
-" let Vundle manage Vundle
-" required!
-Plugin 'gmarik/vundle'
-
 " My Plugins here:
+" general editor helpers
 Plugin 'Raimondi/delimitMate'
-Plugin 'Shougo/unite.vim'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'elzr/vim-json'
-Plugin 'jaxbot/semantic-highlight.vim'
-Plugin 'kmnk/vim-unite-giti'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-eunuch'
+Plugin 'whatyouhide/vim-lengthmatters'
+" source control information
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+" Navigation
 Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+" API sutff
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'slim-template/vim-slim'
-Plugin 'tpope/vim-fugitive'
+" Ruby/Rails helpers
+Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rbenv'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'whatyouhide/vim-lengthmatters'
-" snippits and highlighting
+" snippits and syntax highlighting
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
+Plugin 'elzr/vim-json'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'parkr/vim-jekyll'
+Plugin 'scrooloose/syntastic'
+Plugin 'slim-template/vim-slim'
+Plugin 'tomtom/tlib_vim'
 
 syntax enable
-
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 " solarized settings
 set background=dark
@@ -99,6 +105,13 @@ nnoremap  Q <Nop>
 nnoremap  <F5> :GundoToggle<CR>
 nnoremap  <F8> :TagbarToggle<CR>
 noremap <C-P>  :Unite -start-insert file_rec<CR>
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+" run with dispatch and bundle exec
+let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -108,6 +121,3 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" toggle semantic higlighting
-nnoremap <C-s> :SemanticHighlightToggle<cr>
