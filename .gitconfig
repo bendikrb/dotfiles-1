@@ -16,4 +16,4 @@ protocol = https
 [github]
 	user = pyro2927
 [push]
-	default = simple
+	default = current
