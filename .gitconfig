@@ -17,3 +17,5 @@ protocol = https
 	user = pyro2927
 [push]
 	default = current
+[pull]
+	default = current

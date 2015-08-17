@@ -55,3 +55,8 @@ export SAVEHIST=500
 
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+
+# configure docker
+eval "$(docker-machine env default)"
+export DOCKER_IP=$(docker-machine ip default)
+export JAVA_HOME=`/usr/libexec/java_home`

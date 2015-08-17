@@ -13,6 +13,7 @@ alias ggpush='git push'
 alias ggpull='git pull'
 alias bx='bundle exec'
 
+# simple webserver
 alias srv='python -m SimpleHTTPServer 8888'
 
 # my aliases
@@ -20,4 +21,8 @@ alias cleardupes='/System/Library/Frameworks/CoreServices.framework/Frameworks/L
 alias flushdns='sudo discoveryutil udnsflushcaches'
 alias vundle='vim +BundleInstall +qall'
 
+# start up docker compost
+alias dcs='docker-compose start'
+
+# gorce that shit
 alias pretty_gource='gource --hide mouse,bloom,dirnames,date,filenames,usernames --user-image-dir .git/avatar/ --auto-skip-seconds 1'
