@@ -1,4 +1,5 @@
 # run inside tmux
+export PATH="/usr/local/bin:$HOME/.rbenv/bin:$PATH"
 if [ "$TMUX" = "" ]; then tmux; fi
 
 autoload -U colors && colors
@@ -43,7 +44,6 @@ PROMPT='$fg[red]%(?..(ノಠ益ಠ%)ノ彡┻━┻
 fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions ~/.zsh $fpath)
 
 # rbenv work
-export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # history
@@ -57,6 +57,10 @@ export SAVEHIST=500
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # configure docker
-eval "$(docker-machine env default)"
-export DOCKER_IP=$(docker-machine ip default)
+if [[ $(docker-machine status default) == 'Running' ]];
+then
+  eval "$(docker-machine env default)"
+  export DOCKER_IP=$(docker-machine ip default)
+fi
+  
 export JAVA_HOME=`/usr/libexec/java_home`

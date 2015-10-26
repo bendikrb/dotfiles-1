@@ -13,8 +13,26 @@ Plugin 'tpope/vim-dispatch'
 " Ruby/Rails helpers
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-rails'
+Plugin 'slim-template/vim-slim'
+
+call vundle#end()            " required
 
 syntax enable
+
+set autoindent
+set autoread
+set autowrite
+set backspace=2
+set binary
+set cindent
+set expandtab
+set noeol
+set number
+set rnu
+set shiftwidth=2
+set smartindent
+set softtabstop=2
+set tabstop=2
 
 " Use vim-airline
 let g:airline_powerline_fonts = 1
@@ -54,7 +72,6 @@ autocmd BufWinLeave * call clearmatches()
 autocmd StdinReadPre * let s:std_in=1
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
 " highlight md files correctly
 au BufRead,BufNewFile *.md set filetype=markdown
@@ -62,3 +79,4 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " solarized settings
 set background=dark
 colorscheme solarized
+set relativenumber
