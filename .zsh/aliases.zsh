@@ -27,4 +27,6 @@ alias dcs='docker-compose start'
 # gorce that shit
 alias pretty_gource='gource --hide mouse,bloom,dirnames,date,filenames,usernames --user-image-dir .git/avatar/ --auto-skip-seconds 1'
 
-alias vim='nvim'
+if type 'nvim' > /dev/null; then
+  alias vim='nvim'
+fi

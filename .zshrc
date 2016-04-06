@@ -57,10 +57,12 @@ export SAVEHIST=500
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # configure docker
-if [[ $(docker-machine status default) == 'Running' ]];
-then
-  eval "$(docker-machine env default)"
-  export DOCKER_IP=$(docker-machine ip default)
+if type 'docker-machine' > /dev/null; then
+  if [[ $(docker-machine status default) == 'Running' ]];
+  then
+    eval "$(docker-machine env default)"
+    export DOCKER_IP=$(docker-machine ip default)
+  fi
+  export JAVA_HOME=`/usr/libexec/java_home`
 fi
-  
-export JAVA_HOME=`/usr/libexec/java_home`
+
