@@ -19,7 +19,7 @@ On OS X, you'll need `git` and the OS X command line tools installed (packaged w
 
 ### Install Script
 
-The included install script sets installs my favorite/main programs, and then sets `fish` as the default shell.
+The included install script sets installs my favorite/main programs, and then sets `zsh` as the default shell.
 
 ## Screenshot
 
@@ -33,7 +33,6 @@ The script is meant to work with both Ubuntu and OS X machines, though is more g
 
 * [Homebrew](http://brew.sh/)
   * [rbenv](https://github.com/sstephenson/rbenv) w/ [ruby-build](https://github.com/sstephenson/ruby-build) plugin
-  * [fish](http://fishshell.com/)
   * [tmux](http://tmux.sourceforge.net/)
   * [mercurial](http://mercurial.selenic.com/)
   * [Cask](http://caskroom.io/)
