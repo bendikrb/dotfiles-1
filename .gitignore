@@ -1,7 +1,10 @@
 # Ignored for sensitive data, such as tokens
 .config/hub
 .todo/*.*
+.zsh/rito.zsh
 
 # Ignored because automatically generated
 fishd.*
 fish_history
+
+*.swp

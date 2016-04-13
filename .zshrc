@@ -31,10 +31,10 @@ precmd() {
   vcs_info
 }
 
-source "$HOME/.zsh/aliases.zsh"
-source "$HOME/.zsh/completion.zsh"
-source "$HOME/.zsh/fasd.zsh"
-source "$HOME/.zsh/keys.zsh"
+files=("aliases" "completion" "fasd" "keys" "rito")
+for file in $files; do
+  source "$HOME/.zsh/$file.zsh"
+done
 
 setopt prompt_subst
 PROMPT='$fg[red]%(?..(ノಠ益ಠ%)ノ彡┻━┻

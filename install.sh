@@ -10,7 +10,7 @@ if [[ "$unamestr" == 'Darwin' ]]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
   # install a few terminal basics
-  brew install rbenv ruby-build zsh tmux mercurial wget
+  brew install rbenv ruby-build zsh tmux mercurial wget htop
   # cask
   brew install caskroom/cask/brew-cask
   brew cask install alfred bartender dropbox iterm2 istat-menus karabiner seil slack spotify steam transmit viscosity
