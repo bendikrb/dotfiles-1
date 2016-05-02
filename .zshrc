@@ -1,6 +1,13 @@
 # run inside tmux
 export PATH="/usr/local/bin:$HOME/.rbenv/bin:$PATH"
-if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TMUX" = "" ]; then
+  UNATTACHED=$(tmux list-sessions | grep -v attached | head -n 1 | awk -F ':' '{print $1}')
+  if [ "$UNATTACHED" -ne "" ]; then
+    tmux attach
+  else
+    tmux
+  fi
+fi
 
 autoload -U colors && colors
 autoload -Uz vcs_info
@@ -31,7 +38,7 @@ precmd() {
   vcs_info
 }
 
-files=("aliases" "completion" "fasd" "keys" "rito")
+files=("aliases" "completion" "fasd" "history" "keys" "rito")
 for file in $files; do
   source "$HOME/.zsh/$file.zsh"
 done

@@ -62,6 +62,7 @@ Plugin 'parkr/vim-jekyll'
 Plugin 'scrooloose/syntastic'
 Plugin 'slim-template/vim-slim'
 Plugin 'tomtom/tlib_vim'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 syntax enable
 
