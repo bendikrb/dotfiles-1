@@ -1,5 +1,5 @@
 # run inside tmux
-export PATH="/usr/local/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="/usr/local/bin:$HOME/.rbenv/bin:$PATH:/usr/local/CrossPack-AVR/bin"
 if [ "$TMUX" = "" ]; then
   UNATTACHED=$(tmux list-sessions | grep -v attached | head -n 1 | awk -F ':' '{print $1}')
   if [ "$UNATTACHED" -ne "" ]; then
@@ -53,9 +53,8 @@ fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions ~/.z
 # rbenv work
 eval "$(rbenv init -)"
 
-# history
-export HISTFILE="$HOME/.zsh_history"
-export SAVEHIST=500
+
+export EDITOR=vim
 
 # ssh-agent forwarding
 [ -f ~/.ssh/id_rsa ] && ssh-add ~/.ssh/id_rsa 2> /dev/null
