@@ -17,8 +17,12 @@ if [[ "$unamestr" == 'Darwin' ]]; then
   # default to zsh shell
   chsh -s $(which zsh) $(whoami)
 elif [[ "$unamestr" == 'Linux' ]]; then
-  sudo apt-get update
-  sudo apt-get install -y tmux zsh git mercurial
+  if [[ $EUID -ne 0 ]]; then
+    sudo apt-get update
+    sudo apt-get install -y tmux zsh git mercurial
+  else
+    apt-get install -y tmux zsh git mercurial
+  fi
   if test ! $(which rbenv)
   then
     git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
