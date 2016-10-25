@@ -5,8 +5,7 @@
 # check if OS X or linux
 unamestr=`uname`
 if [[ "$unamestr" == 'Darwin' ]]; then
-  if test ! $(which brew)
-  then
+  if test ! $(which brew); then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
   # install a few terminal basics
@@ -23,8 +22,7 @@ elif [[ "$unamestr" == 'Linux' ]]; then
   else
     apt-get install -y tmux zsh git mercurial
   fi
-  if test ! $(which rbenv)
-  then
+  if test ! $(which rbenv); then
     git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
     echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
     echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
