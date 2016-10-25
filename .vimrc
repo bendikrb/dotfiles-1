@@ -53,6 +53,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-rbenv'
 Plugin 'vim-ruby/vim-ruby'
 " snippits and syntax highlighting
+Plugin 'lepture/vim-jinja'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'elzr/vim-json'
 Plugin 'garbas/vim-snipmate'

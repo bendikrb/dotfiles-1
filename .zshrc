@@ -1,5 +1,5 @@
 # run inside tmux
-export PATH="/usr/local/bin:$HOME/.rbenv/bin:$PATH:/usr/local/CrossPack-AVR/bin"
+export PATH="/usr/local/bin:$HOME/.rbenv/bin:$PATH:/usr/local/CrossPack-AVR/bin:$HOME/bin"
 if [ "$TMUX" = "" ]; then
   UNATTACHED=$(tmux list-sessions | grep -v attached | head -n 1 | awk -F ':' '{print $1}')
   if [ "$UNATTACHED" -ne "" ]; then
@@ -56,11 +56,16 @@ eval "$(rbenv init -)"
 
 export EDITOR=vim
 
+export GOPATH=$HOME
+export GOBIN=$GOPATH/bin
+
 # ssh-agent forwarding
 [ -f ~/.ssh/id_rsa ] && ssh-add ~/.ssh/id_rsa 2> /dev/null
 
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+
+eval "$(thefuck --alias)"
 
 # configure docker
 if type 'docker-machine' > /dev/null; then

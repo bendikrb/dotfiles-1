@@ -30,3 +30,7 @@ alias pretty_gource='gource --hide mouse,bloom,dirnames,date,filenames,usernames
 if type 'nvim' > /dev/null; then
   alias vim='nvim'
 fi
+
+twitch(){
+  livestreamer twitch.tv/$1 best
+}
