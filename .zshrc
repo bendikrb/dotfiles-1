@@ -38,9 +38,8 @@ precmd() {
   vcs_info
 }
 
-files=("aliases" "completion" "fasd" "history" "keys" "rito")
-for file in $files; do
-  source "$HOME/.zsh/$file.zsh"
+for file in ~/.zsh/*.zsh; do
+  source "$file"
 done
 
 setopt prompt_subst
