@@ -2,7 +2,7 @@
 export PATH="/usr/local/bin:$HOME/.rbenv/bin:$PATH:/usr/local/CrossPack-AVR/bin:$HOME/bin"
 if [ "$TMUX" = "" ]; then
   UNATTACHED=$(tmux list-sessions | grep -v attached | head -n 1 | awk -F ':' '{print $1}')
-  if [ "$UNATTACHED" -ne "" ]; then
+  if [ "$UNATTACHED" != "" ]; then
     tmux attach
   else
     tmux
@@ -76,4 +76,9 @@ if type 'docker-machine' > /dev/null; then
   fi
   export JAVA_HOME=`/usr/libexec/java_home`
 fi
+# Source chtf
+if [[ -f /usr/local/share/chtf/chtf.sh ]]; then
+  source "/usr/local/share/chtf/chtf.sh"
+fi
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
