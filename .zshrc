@@ -3,7 +3,7 @@ export PATH="/usr/local/bin:$HOME/.rbenv/bin:$PATH:/usr/local/CrossPack-AVR/bin:
 if [ "$TMUX" = "" ]; then
   UNATTACHED=$(tmux list-sessions | grep -v attached | head -n 1 | awk -F ':' '{print $1}')
   if [ "$UNATTACHED" != "" ]; then
-    tmux attach
+    tmux attach -t $UNATTACHED
   else
     tmux
   fi
