@@ -1,11 +1,13 @@
 " setup Vundle
 set shell=/bin/bash
 set nocompatible
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
-" let Vundle manage Vundle
-Plugin 'gmarik/vundle'
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 set autoindent
 set autoread
@@ -28,54 +30,31 @@ map <Esc>[B <Down>
 
 " My Plugins here:
 " general editor helpers
-Plugin 'Raimondi/delimitMate'
+"Plugin 'Raimondi/delimitMate'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'chase/vim-ansible-yaml'
-Plugin 'editorconfig/editorconfig-vim'
+"Plugin 'editorconfig/editorconfig-vim'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-eunuch'
-Plugin 'whatyouhide/vim-lengthmatters'
+"Plugin 'tpope/vim-dispatch'
+"Plugin 'tpope/vim-eunuch'
+"Plugin 'whatyouhide/vim-lengthmatters'
 " source control information
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 " Navigation
-Plugin 'majutsushi/tagbar'
+"Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 " API sutff
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
-" Ruby/Rails helpers
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-rbenv'
-Plugin 'vim-ruby/vim-ruby'
+"Plugin 'mattn/gist-vim'
+"Plugin 'mattn/webapi-vim'
 " snippits and syntax highlighting
-Plugin 'lepture/vim-jinja'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'elzr/vim-json'
-Plugin 'garbas/vim-snipmate'
-Plugin 'hashivim/vim-terraform'
-Plugin 'honza/vim-snippets'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'parkr/vim-jekyll'
-Plugin 'scrooloose/syntastic'
-Plugin 'slim-template/vim-slim'
-Plugin 'tomtom/tlib_vim'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-
-syntax enable
-
-" solarized settings
-set background=dark
-colorscheme solarized
-
-" Launches neocomplcache automatically on vim startup.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
+"lugin 'lepture/vim-jinja'
+"lugin 'elzr/vim-json'
+"lugin 'hashivim/vim-terraform'
+"lugin 'honza/vim-snippets'
+"lugin 'parkr/vim-jekyll'
+"lugin 'Glench/Vim-Jinja2-Syntax'
 
 " Airline
 " Use vim-airline
@@ -108,14 +87,6 @@ noremap   <C-n> :NERDTreeToggle<CR>
 nnoremap  Q <Nop>
 nnoremap  <F5> :GundoToggle<CR>
 nnoremap  <F8> :TagbarToggle<CR>
-noremap <C-P>  :Unite -start-insert file_rec<CR>
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-" run with dispatch and bundle exec
-let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -128,3 +99,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " use tabs with go
 autocmd Filetype go setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
+
+call vundle#end()
+
+syntax enable
+
+" solarized settings
+set background=dark
+colorscheme solarized
