@@ -52,7 +52,6 @@ fpath=(/usr/local/share/zsh-completions /usr/local/share/zsh/site-functions ~/.z
 # rbenv work
 eval "$(rbenv init -)"
 
-
 export EDITOR=vim
 
 export GOPATH=$HOME
@@ -65,14 +64,3 @@ export GOBIN=$GOPATH/bin
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 eval "$(thefuck --alias)"
-
-# configure docker
-if type 'docker-machine' > /dev/null; then
-  if [[ $(docker-machine status default) == 'Running' ]];
-  then
-    eval "$(docker-machine env default)"
-    export DOCKER_IP=$(docker-machine ip default)
-  fi
-  export JAVA_HOME=`/usr/libexec/java_home`
-fi
-

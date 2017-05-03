@@ -125,3 +125,6 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" use tabs with go
+autocmd Filetype go setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
